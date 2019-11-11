@@ -9,7 +9,7 @@ mpl.rcParams['axes.unicode_minus'] = False
 
 data = np.random.randint(-100, 100, 50).cumsum()
 
-plt.rcParams["font.family"] = 'NanumGothic'
+plt.rcParams["font.family"] = 'Malgun Gothic'
 plt.rcParams["font.size"] = 20
 plt.rcParams["figure.figsize"] = (14,4)
 
