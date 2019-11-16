@@ -31,7 +31,23 @@ plt.title('위도, 경도별 카페 분포',fontsize=20) #타이틀
 
 dong_one=data.loc[data['동']==1]  #동 번호 1인 데이터만 저장
 
+map_one_alt=[];
+map_one_long=[];
 
+for i in range(len(dong_one)):
+    map_one_alt.append(dong_one['위도'].iloc[i])
+    map_one_long.append(dong_one['경도'].iloc[i])
+
+map_one=folium.Map(location=[dong_one['위도'].iloc[0],dong_one['경도'].iloc[0]],zoom_start=13)
+
+for i in range(len(dong_one)):
+    # map_one=folium.Map(location=[map_one_alt[i],map_one_long[i]],zoom_start=13)
+    folium.Marker([map_one_alt[i],map_one_long[i]],popup=i).add_to(map_one)
+
+map_one.save('dong_one.html',encoding='utf-8')
+
+'''
 map_one=folium.Map(location=[dong_one['위도'].iloc[0],dong_one['경도'].iloc[0]],zoom_start=13)
 folium.Marker([dong_one['위도'].iloc[0],dong_one['경도'].iloc[0]],popups='이도동').add_to(map_one)
 map_one.save('dong_one.html',encoding='utf-8')
+'''
