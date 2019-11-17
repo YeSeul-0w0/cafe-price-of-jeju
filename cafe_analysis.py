@@ -87,6 +87,7 @@ for i in range(len(data)):
 
 map_one.save('dong_one.html',encoding='utf-8')
 
+
 data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수"]].copy()
 sns.heatmap(data_heatmap.corr(), annot=True)
 plt.show()
