@@ -38,7 +38,6 @@ for i in range(len(data)):
     map_alt.append(data['위도'].iloc[i])
     map_long.append(data['경도'].iloc[i])
 
-
 map_one=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom_start=13)
 
 for i in range(len(data)):
@@ -88,4 +87,5 @@ for i in range(len(data)):
 
 map_one.save('dong_one.html',encoding='utf-8')
 
-# print(map_one_alt[15])
+
+#print(map_alt[168])
