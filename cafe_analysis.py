@@ -24,10 +24,11 @@ data[['위도', '경도']].describe(include=np.number)
 data['위도']=data['위도'].astype(float)
 data['경도']=data['경도'].astype(float)
 
-sns.relplot(data=data, x="경도", y="위도", hue="동", palette=sns.color_palette("colorblind", 19)) #sns.color_palette("팔레트 이름", 색 수)
+sns.relplot(data=data, x="경도", y="위도", hue="동", palette=sns.color_palette("colorblind", 19))
 
-plt.title('위도, 경도별 카페 분포',fontsize=20) #타이틀
-# plt.show() #show함수로 받은 위도 경도 갑
+
+plt.title('위도, 경도별 카페 분포',fontsize=20)
+# plt.show()
 
 
 map_alt=[];
@@ -43,7 +44,7 @@ map_one=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom
 for i in range(len(data)):
     # map_one=folium.Map(location=[map_one_alt[i],map_one_long[i]],zoom_start=13)
     if(data['동'].iloc[i]==1):
-        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#FF0000', fill_color='##FF0000').add_to(map_one)
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#FF0000', fill_color='#FF0000').add_to(map_one)
     if(data['동'].iloc[i]==2):
         folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#F29661', fill_color='#F29661').add_to(map_one)
     if(data['동'].iloc[i]==3):
@@ -73,7 +74,7 @@ for i in range(len(data)):
     if(data['동'].iloc[i]==15):
         folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#A566FF', fill_color='#A566FF').add_to(map_one)
     if(data['동'].iloc[i]==16):
-        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#050099', fill_color='#050099').add_to(map_one)
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#D26C9F', fill_color='#D26C9F').add_to(map_one)
     if(data['동'].iloc[i]==17):
         folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#FF00DD', fill_color='#FF00DD').add_to(map_one)
     if(data['동'].iloc[i]==18):
