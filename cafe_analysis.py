@@ -42,14 +42,8 @@ map_one=folium.Map(location=[dong_one['위도'].iloc[0],dong_one['경도'].iloc[
 
 for i in range(len(dong_one)):
     # map_one=folium.Map(location=[map_one_alt[i],map_one_long[i]],zoom_start=13)
-    folium.Marker([map_one_alt[i],map_one_long[i]],popup=i,icon_color='red').add_to(map_one)
+    folium.CircleMarker([map_one_alt[i],map_one_long[i]],radius=7,popup=i, color='#123456', fill_color='#123456').add_to(map_one)
 
 map_one.save('dong_one.html',encoding='utf-8')
 
-print(map_one_alt[16])
-
-'''
-map_one=folium.Map(location=[dong_one['위도'].iloc[0],dong_one['경도'].iloc[0]],zoom_start=13)
-folium.Marker([dong_one['위도'].iloc[0],dong_one['경도'].iloc[0]],popups='이도동').add_to(map_one)
-map_one.save('dong_one.html',encoding='utf-8')
-'''
+print(map_one_alt[15])
