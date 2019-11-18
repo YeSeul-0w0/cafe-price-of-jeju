@@ -64,7 +64,7 @@ for i in range(len(data)):
     if(data['가격'].iloc[i]==6):
         folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#1B0000', fill_color='#1B0000').add_to(map_three)
     if(data['가격'].iloc[i]==0):
-        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#FFDAA2', fill_color='#FFDAA2').add_to(map_three)
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#FFFFFF', fill_color='#FFFFFF').add_to(map_three)
 
 map_three.save('dong_three.html', encoding='utf-8')
 
