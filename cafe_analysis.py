@@ -39,9 +39,40 @@ for i in range(len(data)):
     map_long.append(data['경도'].iloc[i])
 
 
-map_one=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom_start=13)
+map_three=folium.Map(location=[data['위도'].iloc[0], data['경도'].iloc[0]], zoom_start=13)
+
+string_price=[];
+
+for a in range(len(data)):
+    temp=str(data['가격'].iloc[i])
+    string_price.append((temp))
+
+
+
+for i in range(len(data)):
+    # map_one=folium.Map(location=[map_one_alt[i],map_one_long[i]],zoom_start=13)
+    if(data['가격'].iloc[i]==1):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#FFA46C', fill_color='#FFA46C').add_to(map_three)
+    if(data['가격'].iloc[i]==2):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#CF6E36', fill_color='#CF6E36').add_to(map_three)
+    if(data['가격'].iloc[i]==3):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7, color='#993800', fill_color='#993800').add_child(folium.Popup(data['업소명'].iloc[i]+"\n"+string_price[i])).add_to(map_three)
+    if(data['가격'].iloc[i]==4):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#630200', fill_color='#630200').add_to(map_three)
+    if(data['가격'].iloc[i]==5):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#2D0000', fill_color='#2D0000').add_to(map_three)
+    if(data['가격'].iloc[i]==6):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#1B0000', fill_color='#1B0000').add_to(map_three)
+    if(data['가격'].iloc[i]==0):
+        folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#FFDAA2', fill_color='#FFDAA2').add_to(map_three)
+
+map_three.save('dong_three.html', encoding='utf-8')
+
 
 '''
+map_one=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom_start=13)
+
+
 for i in range(len(data)):
     # map_one=folium.Map(location=[map_one_alt[i],map_one_long[i]],zoom_start=13)
     if(data['동'].iloc[i]==1):
@@ -83,16 +114,35 @@ for i in range(len(data)):
     if(data['동'].iloc[i]==19):
         folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=i, color='#990085', fill_color='#990085').add_to(map_one)
 
-
 map_one.save('dong_one.html',encoding='utf-8')
-
 '''
+
+
 #data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수"]].copy()
 
 data_heatmap = data[(data["체인점"]==0) & (data['아메리카노']!=0)].copy()
 data_heatmap = data_heatmap[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수", "동"]].copy()
 
 sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
-plt.show()
+# plt.show()
 
-#print(map_alt[168])
+
+data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구", "동 카페 수"]].copy()
+plt.title('위도, 경도별 카페 분포 - 전체',fontsize=20)
+sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
+# plt.show()
+
+data_heatmap1 = data_heatmap[(data["체인점"]==0)].copy()
+plt.title('위도, 경도별 카페 분포 - 체인점 제외',fontsize=20)
+sns.heatmap(data_heatmap1.corr(), annot=True,cmap="YlGnBu")
+# plt.show()
+
+data_heatmap2 = data_heatmap[(data['아메리카노']!=0) ].copy()
+plt.title('위도, 경도별 카페 분포 - 가격정보無 제외',fontsize=20)
+sns.heatmap(data_heatmap2.corr(), annot=True,cmap="YlGnBu")
+# plt.show()
+
+data_heatmap3 = data_heatmap1[(data['아메리카노']!=0) ].copy()
+plt.title('위도, 경도별 카페 분포 - 체인점, 가격정보無 제외',fontsize=20)
+sns.heatmap(data_heatmap3.corr(), annot=True,cmap="YlGnBu")
+# plt.show()
