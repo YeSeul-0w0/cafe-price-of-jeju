@@ -38,7 +38,9 @@ for i in range(len(data)):
     map_alt.append(data['위도'].iloc[i])
     map_long.append(data['경도'].iloc[i])
 
+
 map_one=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom_start=13)
+
 '''
 for i in range(len(data)):
     # map_one=folium.Map(location=[map_one_alt[i],map_one_long[i]],zoom_start=13)
@@ -90,7 +92,7 @@ map_one.save('dong_one.html',encoding='utf-8')
 data_heatmap = data[(data["체인점"]==0) & (data['아메리카노']!=0)].copy()
 data_heatmap = data_heatmap[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수", "동"]].copy()
 
-sns.heatmap(data_heatmap.corr(), annot=True)
+sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
 plt.show()
 
 #print(map_alt[168])
