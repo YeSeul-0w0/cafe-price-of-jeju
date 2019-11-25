@@ -40,13 +40,13 @@ for i in range(len(data)):
 
 
 map_three=folium.Map(location=[data['위도'].iloc[0], data['경도'].iloc[0]], zoom_start=13)
+'''
 
 string_price=[];
 
 for a in range(len(data)):
     temp=str(data['가격'].iloc[i])
     string_price.append((temp))
-
 
 
 for i in range(len(data)):
@@ -66,10 +66,10 @@ for i in range(len(data)):
     if(data['가격'].iloc[i]==0):
         folium.CircleMarker([map_alt[i],map_long[i]],radius=7,popup=data['아메리카노'].iloc[i], color='#FFFFFF', fill_color='#FFFFFF').add_to(map_three)
 
-map_three.save('dong_three.html', encoding='utf-8')
+map_three.save('page/dong_three.html', encoding='utf-8')
 
 
-'''
+
 map_one=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom_start=13)
 
 
@@ -117,32 +117,37 @@ for i in range(len(data)):
 map_one.save('dong_one.html',encoding='utf-8')
 '''
 
-
-#data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수"]].copy()
-
-data_heatmap = data[(data["체인점"]==0) & (data['아메리카노']!=0)].copy()
-data_heatmap = data_heatmap[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수", "동"]].copy()
-
-sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
-# plt.show()
-
-
-data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구", "동 카페 수"]].copy()
+data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "카페밀도", "인구밀도", "동 카페 수"]].copy()
 plt.title('위도, 경도별 카페 분포 - 전체',fontsize=20)
 sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
+plt.show()
+#data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수"]].copy()
+
+
+
+
+
 # plt.show()
 
 data_heatmap1 = data_heatmap[(data["체인점"]==0)].copy()
 plt.title('위도, 경도별 카페 분포 - 체인점 제외',fontsize=20)
 sns.heatmap(data_heatmap1.corr(), annot=True,cmap="YlGnBu")
-# plt.show()
+plt.show()
 
 data_heatmap2 = data_heatmap[(data['아메리카노']!=0) ].copy()
 plt.title('위도, 경도별 카페 분포 - 가격정보無 제외',fontsize=20)
 sns.heatmap(data_heatmap2.corr(), annot=True,cmap="YlGnBu")
-# plt.show()
+plt.show()
 
 data_heatmap3 = data_heatmap1[(data['아메리카노']!=0) ].copy()
 plt.title('위도, 경도별 카페 분포 - 체인점, 가격정보無 제외',fontsize=20)
 sns.heatmap(data_heatmap3.corr(), annot=True,cmap="YlGnBu")
+plt.show()
+
+'''
+data_heatmap = data[(data["체인점"]==0) & (data['아메리카노']!=0)].copy()
+data_heatmap = data_heatmap[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수", "동"]].copy()
+
+sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
 # plt.show()
+'''
