@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5521dd7acc894180a38248e5a3040666 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-popup{
+                    white-space: pre;
+                 }
+            </style>
+
+</head>
+<body>
+
+            <div class="folium-map" id="map_5521dd7acc894180a38248e5a3040666" ></div>
+
+</body>
+<script>
+
+            var map_5521dd7acc894180a38248e5a3040666 = L.map(
+                "map_5521dd7acc894180a38248e5a3040666",
+                {
+                    center: [33.50451177, 126.52417050000001],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+
+
+
+
+            var tile_layer_9e137b4e00514fca8f44e7cdc8ee0272 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5521dd7acc894180a38248e5a3040666);
+
+
+            var circle_marker_23d1aff01c3e4b3e94a2e5540ae3dd4c = L.circleMarker(
+                [33.50451177, 126.52417050000001],
+                {"bubblingMouseEvents": true, "color": "#993800", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#993800", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5521dd7acc894180a38248e5a3040666);
+
+
+        var popup_211c97b2a234427487c114b06cf5e95b = L.popup({"maxWidth": "100%"});
+
+
+            var html_78bc60e467a74acb8b1dff23b54655e9 = $(`<div id="html_78bc60e467a74acb8b1dff23b54655e9" style="width: 100.0%; height: 100.0%;">전농로일공일 3500</div>`)[0];
+            popup_211c97b2a234427487c114b06cf5e95b.setContent(html_78bc60e467a74acb8b1dff23b54655e9);
+
+
+        circle_marker_23d1aff01c3e4b3e94a2e5540ae3dd4c.bindPopup(popup_211c97b2a234427487c114b06cf5e95b)
+        ;
+
+
+
+
+            var circle_marker_c0b1e506e36e4755b664053ac5074fda = L.circleMarker(
+                [33.50448838, 126.524923],
+                {"bubblingMouseEvents": true, "color": "#993800", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#993800", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5521dd7acc894180a38248e5a3040666);
+
+
+        var popup_4addc185fa2544cdab6b73740b3ac53f = L.popup({"maxWidth": "100%"});
+
+
+            var html_38e75fc5d8684350a5982785345c327e = $(`<div id="html_38e75fc5d8684350a5982785345c327e" style="width: 100.0%; height: 100.0%;">원더샌드위치 3000</div>`)[0];
+            popup_4addc185fa2544cdab6b73740b3ac53f.setContent(html_38e75fc5d8684350a5982785345c327e);
+
+
+        circle_marker_c0b1e506e36e4755b664053ac5074fda.bindPopup(popup_4addc185fa2544cdab6b73740b3ac53f)
+        ;
+
+
+
+
+            var circle_marker_0dde443472504bdabc91da264114b2a1 = L.circleMarker(
+                [33.50018441, 126.5176899],
+                {"bubblingMouseEvents": true, "color": "#CF6E36", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#CF6E36", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5521dd7acc894180a38248e5a3040666);
+
+
+        var popup_7526c60c0a334325a7f243adbb67814a = L.popup({"maxWidth": "100%"});
+
+
+            var html_e989d12dc8374c91bc404aed588d7392 = $(`<div id="html_e989d12dc8374c91bc404aed588d7392" style="width: 100.0%; height: 100.0%;">커피다 2000</div>`)[0];
+            popup_7526c60c0a334325a7f243adbb67814a.setContent(html_e989d12dc8374c91bc404aed588d7392);
+
+
+        circle_marker_0dde443472504bdabc91da264114b2a1.bindPopup(popup_7526c60c0a334325a7f243adbb67814a)
+        ;
+
+
+
+
+            var circle_marker_273b88876d66400597c52f2e2167b464 = L.circleMarker(
+                [33.51694182, 126.52337949999999],
+                {"bubblingMouseEvents": true, "color": "#993800", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#993800", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5521dd7acc894180a38248e5a3040666);
+
+
+        var popup_29bf8d9852904c82ab792877c384fee2 = L.popup({"maxWidth": "100%"});
+
+
+            var html_097d88db741240c2961ab1969c71a673 = $(`<div id="html_097d88db741240c2961ab1969c71a673" style="width: 100.0%; height: 100.0%;">에이팩토리커피앤북스 3500</div>`)[0];
+            popup_29bf8d9852904c82ab792877c384fee2.setContent(html_097d88db741240c2961ab1969c71a673);
+
+
+        circle_marker_273b88876d66400597c52f2e2167b464.bindPopup(popup_29bf8d9852904c82ab792877c384fee2)
+        ;
+
+
+
+</script>

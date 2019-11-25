@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_18b16838ffcd41a49dc9203379020394 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-popup{
+                    white-space: pre;
+                 }
+            </style>
+
+</head>
+<body>
+
+            <div class="folium-map" id="map_18b16838ffcd41a49dc9203379020394" ></div>
+
+</body>
+<script>
+
+            var map_18b16838ffcd41a49dc9203379020394 = L.map(
+                "map_18b16838ffcd41a49dc9203379020394",
+                {
+                    center: [33.52319103, 126.58389150000001],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+
+
+
+
+            var tile_layer_6242ff3367964d689e6b47aecd4a0d21 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_18b16838ffcd41a49dc9203379020394);
+
+
+            var circle_marker_3728c54b012d47b2b4bf965c8c5d7568 = L.circleMarker(
+                [33.52319103, 126.58389150000001],
+                {"bubblingMouseEvents": true, "color": "#FFFFFF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_18b16838ffcd41a49dc9203379020394);
+
+
+        var popup_4fbb31fe46f14299ad443c0c2fca141c = L.popup({"maxWidth": "100%"});
+
+
+            var html_1a42948c93d54f0a9a92993b676e2590 = $(`<div id="html_1a42948c93d54f0a9a92993b676e2590" style="width: 100.0%; height: 100.0%;">팡 0</div>`)[0];
+            popup_4fbb31fe46f14299ad443c0c2fca141c.setContent(html_1a42948c93d54f0a9a92993b676e2590);
+
+
+        circle_marker_3728c54b012d47b2b4bf965c8c5d7568.bindPopup(popup_4fbb31fe46f14299ad443c0c2fca141c)
+        ;
+
+
+
+
+            var circle_marker_11c47078d4d8445992251e1998658c89 = L.circleMarker(
+                [33.52580182, 126.587668],
+                {"bubblingMouseEvents": true, "color": "#993800", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#993800", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_18b16838ffcd41a49dc9203379020394);
+
+
+        var popup_4637bea3223a4080b9ad201922618ba5 = L.popup({"maxWidth": "100%"});
+
+
+            var html_43f9262a8f9b4e3ba1bbd506515f48fc = $(`<div id="html_43f9262a8f9b4e3ba1bbd506515f48fc" style="width: 100.0%; height: 100.0%;">커피알마 3500</div>`)[0];
+            popup_4637bea3223a4080b9ad201922618ba5.setContent(html_43f9262a8f9b4e3ba1bbd506515f48fc);
+
+
+        circle_marker_11c47078d4d8445992251e1998658c89.bindPopup(popup_4637bea3223a4080b9ad201922618ba5)
+        ;
+
+
+
+
+            var circle_marker_44ae73fdc9044b69b45a7ead60533974 = L.circleMarker(
+                [33.528625899999994, 126.589041],
+                {"bubblingMouseEvents": true, "color": "#630200", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#630200", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_18b16838ffcd41a49dc9203379020394);
+
+
+        var popup_b563e2327b6a4578aca4ae77c06ffeea = L.popup({"maxWidth": "100%"});
+
+
+            var html_91a7f1c7888b4c2b819185164a6c687f = $(`<div id="html_91a7f1c7888b4c2b819185164a6c687f" style="width: 100.0%; height: 100.0%;">카페노아 4000</div>`)[0];
+            popup_b563e2327b6a4578aca4ae77c06ffeea.setContent(html_91a7f1c7888b4c2b819185164a6c687f);
+
+
+        circle_marker_44ae73fdc9044b69b45a7ead60533974.bindPopup(popup_b563e2327b6a4578aca4ae77c06ffeea)
+        ;
+
+
+
+
+            var circle_marker_a7850578fdc04320b66bcab0a2b36ea1 = L.circleMarker(
+                [33.5172865, 126.5876618],
+                {"bubblingMouseEvents": true, "color": "#FFA46C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA46C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_18b16838ffcd41a49dc9203379020394);
+
+
+        var popup_3bd0c07b09aa4738a7975e3663caa048 = L.popup({"maxWidth": "100%"});
+
+
+            var html_21b0959126724210908a27f9354d95d5 = $(`<div id="html_21b0959126724210908a27f9354d95d5" style="width: 100.0%; height: 100.0%;">제주삼화부영점빽다방 1500</div>`)[0];
+            popup_3bd0c07b09aa4738a7975e3663caa048.setContent(html_21b0959126724210908a27f9354d95d5);
+
+
+        circle_marker_a7850578fdc04320b66bcab0a2b36ea1.bindPopup(popup_3bd0c07b09aa4738a7975e3663caa048)
+        ;
+
+
+
+</script>
