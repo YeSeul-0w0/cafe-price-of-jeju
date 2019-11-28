@@ -1,6 +1,0 @@
-map_two=folium.Map(location=[data['위도'].iloc[0],data['경도'].iloc[0]],zoom_start=13)
-
-for j in range(len(data)):
-    folium.CircleMarker([map_alt[j],map_long[j]],radius=7,popup=i, color='#0000FF', fill_color='#0000FF').add_to(map_two)
-
-map_two.save('not-dong.html',encoding='utf-8')
