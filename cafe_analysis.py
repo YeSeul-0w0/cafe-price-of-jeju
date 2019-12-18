@@ -12,14 +12,16 @@ warnings.filterwarnings('ignore', 'This pattern has match groups')
 warnings.filterwarnings('ignore', 'The iterable function was deprecated in Matplotlib')
 
 # 데이터 로딩
-data=pd.read_csv('cafe_data.csv', encoding='cp949') 
-
+data=pd.read_csv('cafe_data.csv', encoding='cp949')
+#print(data.columns)
+#print(data.head(5))
 
 # 한글 인식을 위한 작업
 mpl.rcParams['axes.unicode_minus'] = False
 plt.rcParams["font.family"] = 'Malgun Gothic'
-plt.rcParams["font.size"] = 15
+plt.rcParams["font.size"] = 10
 plt.rcParams["figure.figsize"] = (14,4)
+
 data[['위도', '경도']].describe(include=np.number)
 data['위도']=data['위도'].astype(float)
 data['경도']=data['경도'].astype(float)
@@ -118,32 +120,24 @@ map_dong_price.save('map_all.html', encoding='utf-8')
 
 
 # 히트맵 출력
+plt.subplot(2, 2, 1)
 data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "카페밀도", "인구밀도", "동 카페 수"]].copy()
-plt.title('위도, 경도별 카페 분포 - 전체',fontsize=20)
-sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
-plt.show()
-data_heatmap = data[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수"]].copy()
-plt.show()
+plt.title('위도, 경도별 카페 분포 - 전체',fontsize=12)
+sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu",annot_kws={"size": 10})
 
+plt.subplot(2, 2, 2)
 data_heatmap1 = data_heatmap[(data["체인점"]==0)].copy()
-plt.title('위도, 경도별 카페 분포 - 체인점 제외',fontsize=20)
-sns.heatmap(data_heatmap1.corr(), annot=True,cmap="YlGnBu")
-plt.show()
+plt.title('위도, 경도별 카페 분포 - 체인점 제외',fontsize=12)
+sns.heatmap(data_heatmap1.corr(), annot=True,cmap="YlGnBu",annot_kws={"size": 10})
 
+plt.subplot(2, 2, 3)
 data_heatmap2 = data_heatmap[(data['아메리카노']!=0) ].copy()
-plt.title('위도, 경도별 카페 분포 - 가격정보無 제외',fontsize=20)
-sns.heatmap(data_heatmap2.corr(), annot=True,cmap="YlGnBu")
-plt.show()
+plt.title('위도, 경도별 카페 분포 - 가격정보無 제외',fontsize=12)
+sns.heatmap(data_heatmap2.corr(), annot=True,cmap="YlGnBu",annot_kws={"size": 10})
 
+plt.subplot(2, 2, 4)
 data_heatmap3 = data_heatmap1[(data['아메리카노']!=0) ].copy()
-plt.title('위도, 경도별 카페 분포 - 체인점, 가격정보無 제외',fontsize=20)
-sns.heatmap(data_heatmap3.corr(), annot=True,cmap="YlGnBu")
-plt.show()
-
-
-data_heatmap = data[(data["체인점"]==0) & (data['아메리카노']!=0)].copy()
-data_heatmap = data_heatmap[["아메리카노", "근처 카페 수", "면적", "동 면적", "인구" , "동 카페 수", "동"]].copy()
-
-sns.heatmap(data_heatmap.corr(), annot=True,cmap="YlGnBu")
+plt.title('위도, 경도별 카페 분포 - 체인점, 가격정보無 제외',fontsize=12)
+sns.heatmap(data_heatmap3.corr(), annot=True,cmap="YlGnBu",annot_kws={"size": 10})
 plt.show()
 
